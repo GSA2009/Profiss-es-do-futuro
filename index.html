@@ -1,14 +1,11 @@
 <!-- TELA INICIAL -->
 <section id="home" class="screen active">
-
   <div class="hero">
     <h1>🚀 Descubra sua Área Profissional</h1>
-
     <p>
       Responda 15 perguntas e descubra quais áreas profissionais
       combinam mais com seu perfil.
     </p>
-
     <div class="areas-preview">
       <div>💻 Tecnologia</div>
       <div>🏥 Saúde</div>
@@ -19,96 +16,64 @@
       <div>⚙️ Engenharia</div>
       <div>⚖️ Direito</div>
     </div>
-
     <button id="startBtn">
       COMEÇAR TESTE
     </button>
-
   </div>
-
 </section>
-
 <div class="qr-area">
   <h3>Faça o teste pelo seu celular</h3>
-  
 <img
   src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://codepen.io/GSA-007/pen/WbRxZqE"
   alt="QR Code">
   <p>Aponte a câmera do celular para o QR Code.</p>
 </div>
-
 <!-- TELA DO TESTE -->
 <section id="quiz" class="screen">
-
   <div class="quiz-container">
-
     <div class="top-info">
-
       <div id="questionCounter">
         Pergunta 1 de 15
       </div>
-
       <div class="progress-container">
         <div id="progressBar"></div>
       </div>
-
     </div>
-
     <div class="question-card">
-
       <h2 id="questionText">
         Pergunta
       </h2>
-
       <div id="options" class="options">
-
         <button class="option" data-value="1">
           Discordo totalmente
         </button>
-
         <button class="option" data-value="2">
           Discordo
         </button>
-
         <button class="option" data-value="3">
           Neutro
         </button>
-
         <button class="option" data-value="4">
           Concordo
         </button>
-
         <button class="option" data-value="5">
           Concordo totalmente
         </button>
-
       </div>
-
       <button id="nextBtn" class="next-btn">
         Próxima →
       </button>
-
     </div>
-
   </div>
-
 </section>
-
 <!-- TELA RESULTADO -->
 <section id="result" class="screen">
-
   <div class="result-container">
-
     <h1>🏆 Seu Resultado</h1>
-
     <div id="ranking" class="ranking"></div>
-
     <div id="bestArea" class="best-area"></div>
-
     <button id="restartBtn">
       Refazer Teste
     </button>
-
   </div>
-
 </section>
