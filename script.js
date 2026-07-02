@@ -206,17 +206,25 @@ function showResult() {
   maximos[area]) * 100)
     }))
     .sort((a, b) => b.valor - a.valor);
-  sorted.forEach(item => {
-    ranking.innerHTML += `
-      <div class="area-score">
-        <strong>${areasInfo[item.area].nome}</strong> - ${item.porcentagem}%
-        <div class="bar">
-          <div class="fill" style="width:${item.porcentagem}%"></div>
-        </div>
-      </div>
-    `;
-  });
-  const info = areasInfo[sorted[0].area];
+sorted
+.sort((a,b)=>b.porcentagem-a.porcentagem)
+.forEach((item,index)=>{
+let medalha="";
+if(index===0) medalha="🥇 ";
+else if(index===1) medalha="🥈 ";
+else if(index===2) medalha="🥉 ";
+ranking.innerHTML += `
+<div class="area-score">
+<strong>${medalha}${areasInfo[item.area].nome}</strong>
+- ${item.porcentagem}%
+<div class="bar">
+<div class="fill" style="width:${item.porcentagem}%"></div>
+</div>
+</div>
+`;
+});
+  const melhorArea = sorted[0].area;
+  const info = areasInfo[melhorArea];
   bestArea.innerHTML = `
     <h2>${info.nome}</h2>
     <p>${info.descricao}</p>
