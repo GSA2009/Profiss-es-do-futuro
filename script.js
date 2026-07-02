@@ -15,7 +15,6 @@ const questions = [
   "Tenho interesse em melhorar a vida das pessoas.",
   "Gostaria de trabalhar em algo que impacte o futuro."
 ];
-
 const areasInfo = {
   tecnologia: {
     nome: "💻 Tecnologia",
@@ -29,7 +28,6 @@ const areasInfo = {
       "Engenheiro de IA"
     ]
   },
-
   saude: {
     nome: "🏥 Saúde",
     descricao: "Área voltada ao cuidado das pessoas.",
@@ -42,7 +40,6 @@ const areasInfo = {
       "Biotecnologista"
     ]
   },
-
   educacao: {
     nome: "📚 Educação",
     descricao: "Área responsável pela formação das pessoas.",
@@ -55,7 +52,6 @@ const areasInfo = {
       "Designer Educacional"
     ]
   },
-
   artes: {
     nome: "🎨 Artes e Design",
     descricao: "Área ligada à criatividade e comunicação visual.",
@@ -68,7 +64,6 @@ const areasInfo = {
       "Diretor de Arte"
     ]
   },
-
   negocios: {
     nome: "💼 Negócios",
     descricao: "Área de gestão e empreendedorismo.",
@@ -81,7 +76,6 @@ const areasInfo = {
       "Gestor de Projetos"
     ]
   },
-
   ambiente: {
     nome: "🌱 Meio Ambiente",
     descricao: "Área dedicada à sustentabilidade.",
@@ -94,7 +88,6 @@ const areasInfo = {
       "Especialista em Energias Renováveis"
     ]
   },
-
   engenharia: {
     nome: "⚙️ Engenharia",
     descricao: "Área que cria soluções para problemas reais.",
@@ -107,7 +100,6 @@ const areasInfo = {
       "Engenheiro de Produção"
     ]
   },
-
   direito: {
     nome: "⚖️ Direito",
     descricao: "Área relacionada à justiça e às leis.",
@@ -121,86 +113,60 @@ const areasInfo = {
     ]
   }
 };
-
 let currentQuestion = 0;
 let answers = [];
 let selectedAnswer = null;
-
 const home = document.getElementById("home");
 const quiz = document.getElementById("quiz");
 const result = document.getElementById("result");
-
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
 const restartBtn = document.getElementById("restartBtn");
-
 const questionText = document.getElementById("questionText");
 const questionCounter = document.getElementById("questionCounter");
 const progressBar = document.getElementById("progressBar");
-
 const options = document.querySelectorAll(".option");
-
 startBtn.onclick = function () {
   home.classList.remove("active");
   quiz.classList.add("active");
   loadQuestion();
 };
-
 function loadQuestion() {
-
   questionText.textContent = questions[currentQuestion];
-
   questionCounter.textContent =
     `Pergunta ${currentQuestion + 1} de ${questions.length}`;
-
   progressBar.style.width =
     `${(currentQuestion / questions.length) * 100}%`;
-
   selectedAnswer = null;
-
   options.forEach(btn => {
     btn.classList.remove("selected");
   });
 }
-
 options.forEach(btn => {
-
   btn.onclick = function () {
-
     options.forEach(b => {
       b.classList.remove("selected");
     });
-
     btn.classList.add("selected");
-
     selectedAnswer = Number(btn.dataset.value);
   };
-
 });
-
 nextBtn.onclick = function () {
-
   if (selectedAnswer === null) {
     alert("Escolha uma resposta.");
     return;
   }
-
   answers.push(selectedAnswer);
-
   currentQuestion++;
-
   if (currentQuestion < questions.length) {
     loadQuestion();
   } else {
     showResult();
   }
 };
-
 function showResult() {
-
   quiz.classList.remove("active");
   result.classList.add("active");
-
   let scores = {
     tecnologia: 0,
     saude: 0,
@@ -211,7 +177,6 @@ function showResult() {
     engenharia: 0,
     direito: 0
   };
-
   scores.tecnologia += answers[0]*3 + answers[3]*2 + answers[11]*3;
   scores.saude += answers[1]*3 + answers[8]*2 + answers[13]*3;
   scores.educacao += answers[4]*3 + answers[12]*2 + answers[13]*2;
@@ -220,12 +185,9 @@ function showResult() {
   scores.ambiente += answers[5]*3 + answers[8]*2 + answers[14]*2;
   scores.engenharia += answers[3]*3 + answers[7]*2 + answers[11]*3;
   scores.direito += answers[6]*2 + answers[7]*2 + answers[12]*3;
-
   const ranking = document.getElementById("ranking");
   const bestArea = document.getElementById("bestArea");
-
   ranking.innerHTML = "<h2>📊 Afinidade com cada área</h2>";
-
   const maximos = {
     tecnologia: 40,
     saude: 40,
@@ -236,7 +198,6 @@ function showResult() {
     engenharia: 40,
     direito: 35
   };
-  
   const sorted = Object.entries(scores)
   .map(([area, valor]) => ({
     area,
@@ -244,62 +205,45 @@ function showResult() {
     porcentagem: Math.round((valor /
   maximos[area]) * 100)
     }))
-  
     .sort((a, b) => b.valor - a.valor);
-
   sorted.forEach(item => {
-
     ranking.innerHTML += `
       <div class="area-score">
         <strong>${areasInfo[item.area].nome}</strong> - ${item.porcentagem}%
-
         <div class="bar">
           <div class="fill" style="width:${item.porcentagem}%"></div>
         </div>
       </div>
     `;
   });
-
   const info = areasInfo[sorted[0].area];
-
   bestArea.innerHTML = `
     <h2>${info.nome}</h2>
-
     <p>${info.descricao}</p>
-
     <div class="info-box">
       <strong>💰 Faixa Salarial</strong><br>
       ${info.salario}
     </div>
-
     <div class="info-box">
       <strong>📈 Mercado de Trabalho</strong><br>
       ${info.mercado}
     </div>
-
     <div class="info-box">
       <strong>👨‍💻 Profissões Relacionadas</strong>
-
       <ul>
         ${info.profissao.map(p => `<li>${p}</li>`).join("")}
       </ul>
     </div>
   `;
 }
-
 restartBtn.onclick = function () {
-
   currentQuestion = 0;
   answers = [];
   selectedAnswer = null;
-
   result.classList.remove("active");
   quiz.classList.remove("active");
   home.classList.add("active");
-
   document.getElementById("ranking").innerHTML = "";
   document.getElementById("bestArea").innerHTML = "";
-
   progressBar.style.width = "0%";
-
 };
