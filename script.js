@@ -205,7 +205,7 @@ function showResult() {
     porcentagem: Math.round((valor /
   maximos[area]) * 100)
     }))
-    .sort((a, b) => b.valor - a.valor);
+  .sort((a, b) => b.valor - a.valor);
 sorted
 .sort((a,b)=>b.porcentagem-a.porcentagem)
 .forEach((item,index)=>{
@@ -223,8 +223,8 @@ ranking.innerHTML += `
 </div>
 `;
 });
-  const melhorArea = sorted[0].area;
-  const info = areasInfo[melhorArea];
+const melhorArea = sorted[0].area;
+const info = areasInfo[melhorArea];
   bestArea.innerHTML = `
     <h2>${info.nome}</h2>
     <p>${info.descricao}</p>
