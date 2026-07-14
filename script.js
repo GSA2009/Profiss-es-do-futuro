@@ -1,461 +1,1089 @@
-// =========================
-// PERGUNTAS
-// =========================
+// =====================================
+// PROFISSÕES DO FUTURO - SCRIPT.JS
+// PARTE 1
+// =====================================
 
-const questions = [
 
-  // 💻 Tecnologia
-  {
-    texto: "Você gosta de mexer no computador, celular ou aprender sobre tecnologia?",
-    areas: ["tecnologia"]
-  },
-  {
-    texto: "Se pudesse criar um jogo ou um aplicativo, você acharia isso legal?",
-    areas: ["tecnologia"]
-  },
+// ===============================
+// INFORMAÇÕES DAS ÁREAS
+// ===============================
 
-  // 🏥 Saúde
-  {
-    texto: "Você gosta de cuidar das pessoas quando elas precisam de ajuda?",
-    areas: ["saude"]
-  },
-  {
-    texto: "Você acha interessante aprender como funciona o corpo humano?",
-    areas: ["saude"]
-  },
 
-  // 📚 Educação
-  {
-    texto: "Você gosta de ajudar seus colegas quando eles têm dificuldade em alguma matéria?",
-    areas: ["educacao"]
-  },
-  {
-    texto: "Você teria paciência para ensinar algo que sabe fazer bem?",
-    areas: ["educacao"]
-  },
+const areas = {
 
-  // 🎨 Artes
-  {
-    texto: "Você gosta de desenhar, criar ou inventar coisas novas?",
-    areas: ["artes"]
-  },
-  {
-    texto: "Você gosta de fazer vídeos, editar fotos ou criar artes para a internet?",
-    areas: ["artes"]
-  },
+    tecnologia: {
 
-  // 💼 Negócios
-  {
-    texto: "Você gosta de organizar atividades ou liderar um grupo?",
-    areas: ["negocios"]
-  },
-  {
-    texto: "Você já pensou em ter sua própria empresa ou vender algum produto?",
-    areas: ["negocios"]
-  },
+        nome: "💻 Tecnologia",
 
-  // 🌱 Meio Ambiente
-  {
-    texto: "Você gosta de cuidar da natureza, das plantas ou dos animais?",
-    areas: ["ambiente"]
-  },
-  {
-    texto: "Você se preocupa com problemas como poluição e desmatamento?",
-    areas: ["ambiente"]
-  },
+        profissao: "👨‍💻 Desenvolvedor de Software",
 
-  // ⚙️ Engenharia
-  {
-    texto: "Você gosta de montar, desmontar ou descobrir como as coisas funcionam?",
-    areas: ["engenharia"]
-  },
-  {
-    texto: "Você gostaria de criar pontes, prédios, carros ou máquinas no futuro?",
-    areas: ["engenharia"]
-  },
+        salario: "R$ 4.000 a R$ 25.000+",
 
-  // ⚖️ Direito
-  {
-    texto: "Você gosta de defender quem está certo quando vê uma injustiça?",
-    areas: ["direito"]
-  },
-  {
-    texto: "Você gosta de conversar e tentar resolver brigas ou problemas entre as pessoas?",
-    areas: ["direito"]
-  }
+        cursos:
+        "Ciência da Computação, Sistemas de Informação, Engenharia de Software e Análise e Desenvolvimento de Sistemas.",
+
+        mercado:
+        "A área de tecnologia está crescendo bastante e possui muitas oportunidades no Brasil e no exterior.",
+
+        profissaoRelacionada:
+        "Programador, Desenvolvedor de Jogos, Analista de Sistemas, Cientista de Dados.",
+
+        explicacao:
+        "Você demonstra interesse por criar soluções, usar tecnologia e resolver problemas usando criatividade e lógica."
+
+    },
+
+
+    saude: {
+
+        nome: "🏥 Saúde",
+
+        profissao: "🩺 Profissional da Saúde",
+
+        salario: "R$ 3.500 a R$ 30.000+",
+
+        cursos:
+        "Medicina, Enfermagem, Fisioterapia, Farmácia e Odontologia.",
+
+        mercado:
+        "Sempre existe necessidade de profissionais da saúde para cuidar das pessoas.",
+
+        profissaoRelacionada:
+        "Médico, Enfermeiro, Dentista, Fisioterapeuta e Farmacêutico.",
+
+        explicacao:
+        "Você mostra interesse em ajudar pessoas e contribuir para o bem-estar delas."
+
+    },
+
+
+    engenharia: {
+
+        nome: "⚙️ Engenharia",
+
+        profissao: "👷 Engenheiro",
+
+        salario: "R$ 5.000 a R$ 20.000+",
+
+        cursos:
+        "Engenharia Civil, Mecânica, Elétrica, Produção e Computação.",
+
+        mercado:
+        "Engenheiros são importantes para criar projetos e melhorar tecnologias.",
+
+        profissaoRelacionada:
+        "Engenheiro Civil, Mecânico, Eletricista e de Software.",
+
+        explicacao:
+        "Você gosta de construir, criar soluções e entender como as coisas funcionam."
+
+    },
+
+
+    educacao: {
+
+        nome: "📚 Educação",
+
+        profissao: "👩‍🏫 Professor",
+
+        salario: "R$ 3.000 a R$ 12.000+",
+
+        cursos:
+        "Pedagogia, Letras, Matemática, História e outras licenciaturas.",
+
+        mercado:
+        "Profissionais da educação são essenciais para formar novas gerações.",
+
+        profissaoRelacionada:
+        "Professor, Coordenador Pedagógico e Diretor Escolar.",
+
+        explicacao:
+        "Você gosta de ensinar, explicar ideias e ajudar outras pessoas a aprender."
+
+    },
+
+
+    negocios: {
+
+        nome: "💼 Negócios",
+
+        profissao: "📊 Administrador",
+
+        salario: "R$ 3.500 a R$ 25.000+",
+
+        cursos:
+        "Administração, Marketing, Economia e Gestão Comercial.",
+
+        mercado:
+        "Empresas sempre precisam de pessoas que saibam organizar e liderar projetos.",
+
+        profissaoRelacionada:
+        "Empreendedor, Gestor, Analista Financeiro e Gerente.",
+
+        explicacao:
+        "Você possui características de liderança, organização e planejamento."
+
+    },
+
+
+    direito: {
+
+        nome: "⚖️ Direito",
+
+        profissao: "👨‍⚖️ Advogado",
+
+        salario: "R$ 4.000 a R$ 30.000+",
+
+        cursos:
+        "Curso superior em Direito.",
+
+        mercado:
+        "Existem oportunidades em escritórios, empresas e órgãos públicos.",
+
+        profissaoRelacionada:
+        "Advogado, Juiz, Promotor e Delegado.",
+
+        explicacao:
+        "Você demonstra interesse por justiça, comunicação e defesa de ideias."
+
+    },
+
+
+    artes: {
+
+        nome: "🎨 Artes",
+
+        profissao: "🎨 Designer",
+
+        salario:
+        "R$ 2.500 a R$ 15.000+",
+
+        cursos:
+        "Design, Cinema, Artes Visuais, Publicidade e Animação.",
+
+        mercado:
+        "O mercado criativo cresce com internet, jogos, vídeos e mídias digitais.",
+
+        profissaoRelacionada:
+        "Designer, Ilustrador, Animador e Fotógrafo.",
+
+        explicacao:
+        "Você gosta de criar, imaginar novas ideias e se expressar."
+
+    },
+
+
+    meioAmbiente: {
+
+        nome: "🌱 Meio Ambiente",
+
+        profissao: "🌎 Especialista Ambiental",
+
+        salario:
+        "R$ 3.500 a R$ 18.000+",
+
+        cursos:
+        "Biologia, Engenharia Ambiental e Gestão Ambiental.",
+
+        mercado:
+        "A sustentabilidade aumenta a procura por profissionais ambientais.",
+
+        profissaoRelacionada:
+        "Biólogo, Engenheiro Ambiental e Consultor Ambiental.",
+
+        explicacao:
+        "Você demonstra preocupação com a natureza e vontade de proteger o planeta."
+
+    }
+
+};
+
+
+
+// ===============================
+// PERGUNTAS DO TESTE
+// ===============================
+
+
+const perguntas = [
+
+{
+texto:"Você gosta de mexer no computador ou celular para descobrir coisas novas?",
+area:"tecnologia"
+},
+
+{
+texto:"Você teria vontade de criar um jogo, aplicativo ou site?",
+area:"tecnologia"
+},
+
+
+{
+texto:"Você gosta de ajudar pessoas quando elas precisam?",
+area:"saude"
+},
+
+{
+texto:"Você se imagina trabalhando cuidando da saúde de alguém?",
+area:"saude"
+},
+
+
+{
+texto:"Você gosta de montar, construir ou consertar coisas?",
+area:"engenharia"
+},
+
+{
+texto:"Quando aparece um problema, você gosta de procurar uma solução?",
+area:"engenharia"
+},
+
+
+{
+texto:"Você gosta de explicar coisas para seus colegas?",
+area:"educacao"
+},
+
+{
+texto:"Você teria prazer em ensinar algo para outra pessoa?",
+area:"educacao"
+},
+
+
+{
+texto:"Você gosta de organizar grupos ou liderar atividades?",
+area:"negocios"
+},
+
+{
+texto:"Você gostaria de criar sua própria empresa um dia?",
+area:"negocios"
+},
+
+
+{
+texto:"Você gosta de conversar e defender suas opiniões?",
+area:"direito"
+},
+
+{
+texto:"Você acha interessante conhecer regras e direitos das pessoas?",
+area:"direito"
+},
+
+
+{
+texto:"Você gosta de desenhar, criar ou inventar coisas?",
+area:"artes"
+},
+
+{
+texto:"Você gosta de música, vídeos, fotos ou animações?",
+area:"artes"
+},
+
+
+{
+texto:"Você gosta da natureza e dos animais?",
+area:"meioAmbiente"
+},
+
+{
+texto:"Você gostaria de ajudar a proteger o planeta?",
+area:"meioAmbiente"
+}
 
 ];
 
-// =========================
-// DADOS DAS ÁREAS
-// =========================
 
-const areasInfo = {
 
-  tecnologia:{
-    nome:"💻 Tecnologia",
-    descricao:"Você gosta de tecnologia, inovação e computadores.",
-    salario:"R$ 3.000 a R$ 15.000+",
-    mercado:"Alta demanda.",
-    profissao:[
-      "Programador",
-      "Desenvolvedor de Jogos",
-      "Analista de Sistemas",
-      "Cientista de Dados"
-    ]
-  },
+// ===============================
+// VARIÁVEIS DO TESTE
+// ===============================
 
-  saude:{
-    nome:"🏥 Saúde",
-    descricao:"Você gosta de cuidar das pessoas.",
-    salario:"R$ 3.500 a R$ 20.000+",
-    mercado:"Sempre em crescimento.",
-    profissao:[
-      "Médico",
-      "Enfermeiro",
-      "Fisioterapeuta",
-      "Nutricionista"
-    ]
-  },
 
-  educacao:{
-    nome:"📚 Educação",
-    descricao:"Você gosta de ensinar e compartilhar conhecimento.",
-    salario:"R$ 2.500 a R$ 12.000+",
-    mercado:"Muito importante.",
-    profissao:[
-      "Professor",
-      "Pedagogo",
-      "Psicopedagogo",
-      "Coordenador Escolar"
-    ]
-  },
+let perguntaAtual = 0;
 
-  artes:{
-    nome:"🎨 Artes",
-    descricao:"Você é criativo e gosta de criar coisas novas.",
-    salario:"R$ 2.000 a R$ 15.000+",
-    mercado:"Em crescimento.",
-    profissao:[
-      "Designer",
-      "Ilustrador",
-      "Fotógrafo",
-      "Animador"
-    ]
-  },
 
-  negocios:{
-    nome:"💼 Negócios",
-    descricao:"Você gosta de liderança e organização.",
-    salario:"R$ 3.000 a R$ 20.000+",
-    mercado:"Presente em qualquer empresa.",
-    profissao:[
-      "Administrador",
-      "Empreendedor",
-      "Gestor",
-      "Consultor"
-    ]
-  },
+let respostas = {};
 
-  ambiente:{
-    nome:"🌱 Meio Ambiente",
-    descricao:"Você gosta de cuidar da natureza.",
-    salario:"R$ 3.000 a R$ 12.000+",
-    mercado:"Cada vez mais valorizado.",
-    profissao:[
-      "Biólogo",
-      "Engenheiro Ambiental",
-      "Gestor Ambiental"
-    ]
-  },
 
-  engenharia:{
-    nome:"⚙️ Engenharia",
-    descricao:"Você gosta de construir e resolver problemas.",
-    salario:"R$ 4.000 a R$ 20.000+",
-    mercado:"Alta valorização.",
-    profissao:[
-      "Engenheiro Civil",
-      "Engenheiro Mecânico",
-      "Engenheiro Elétrico"
-    ]
-  },
 
-  direito:{
-    nome:"⚖️ Direito",
-    descricao:"Você gosta de justiça e argumentação.",
-    salario:"R$ 4.000 a R$ 30.000+",
-    mercado:"Diversas oportunidades.",
-    profissao:[
-      "Advogado",
-      "Promotor",
-      "Juiz",
-      "Delegado"
-    ]
-  }
+Object.keys(areas).forEach(area=>{
 
-};
+    respostas[area]=0;
 
-// =========================
-// VARIÁVEIS
-// =========================
+});
+// =====================================
+// SCRIPT.JS - PARTE 2
+// FUNCIONAMENTO DO QUIZ
+// =====================================
 
-let currentQuestion = 0;
-let answers = [];
-let selectedAnswer = null;
+
+// ===============================
+// ELEMENTOS DA PÁGINA
+// ===============================
+
 
 const home = document.getElementById("home");
+
 const quiz = document.getElementById("quiz");
+
 const result = document.getElementById("result");
 
+
 const startBtn = document.getElementById("startBtn");
-const nextBtn = document.getElementById("nextBtn");
+
 const restartBtn = document.getElementById("restartBtn");
 
+
 const questionText = document.getElementById("questionText");
+
 const questionCounter = document.getElementById("questionCounter");
-const progressBar = document.getElementById("progressBar");
+
 
 const options = document.querySelectorAll(".option");
 
-// =========================
-// INICIAR TESTE
-// =========================
 
-startBtn.onclick = function () {
+const nextBtn = document.getElementById("nextBtn");
+
+
+const progressBar = document.getElementById("progressBar");
+
+
+
+// Guarda a resposta escolhida
+
+let respostaSelecionada = null;
+
+
+
+// ===============================
+// COMEÇAR TESTE
+// ===============================
+
+
+startBtn.addEventListener("click",()=>{
+
 
     home.classList.remove("active");
+
+
     quiz.classList.add("active");
 
-    loadQuestion();
 
-};
+    mostrarPergunta();
 
-// =========================
-// CARREGAR PERGUNTA
-// =========================
-
-function loadQuestion() {
-
-    const pergunta = questions[currentQuestion];
-
-    questionText.textContent = pergunta.texto;
-
-    questionCounter.textContent =
-        `Pergunta ${currentQuestion + 1} de ${questions.length}`;
-
-    progressBar.style.width =
-        `${((currentQuestion + 1) / questions.length) * 100}%`;
-
-    selectedAnswer = null;
-
-    options.forEach(btn => {
-
-        btn.classList.remove("selected");
-
-    });
-
-}
-
-// =========================
-// SELECIONAR RESPOSTA
-// =========================
-
-options.forEach(btn => {
-
-    btn.onclick = function () {
-
-        options.forEach(botao => {
-
-            botao.classList.remove("selected");
-
-        });
-
-        btn.classList.add("selected");
-
-        selectedAnswer = Number(btn.dataset.value);
-
-    };
 
 });
 
-// =========================
-// BOTÃO PRÓXIMA
-// =========================
 
-nextBtn.onclick = function () {
 
-    if (selectedAnswer === null) {
 
-        alert("Escolha uma resposta antes de continuar.");
+// ===============================
+// MOSTRAR PERGUNTA
+// ===============================
+
+
+function mostrarPergunta(){
+
+
+    let pergunta = perguntas[perguntaAtual];
+
+
+    questionText.textContent = pergunta.texto;
+
+
+
+    questionCounter.textContent =
+
+    `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+
+
+
+    let progresso =
+
+    ((perguntaAtual) / perguntas.length) * 100;
+
+
+
+    progressBar.style.width = progresso + "%";
+
+
+
+    respostaSelecionada = null;
+
+
+
+    // Remove seleção anterior
+
+    options.forEach(botao=>{
+
+
+        botao.classList.remove("selected");
+
+
+    });
+
+
+
+    nextBtn.style.display="none";
+
+
+}
+
+
+
+
+// ===============================
+// ESCOLHA DAS RESPOSTAS
+// ===============================
+
+
+options.forEach(botao=>{
+
+
+    botao.addEventListener("click",()=>{
+
+
+        options.forEach(btn=>{
+
+            btn.classList.remove("selected");
+
+        });
+
+
+
+        botao.classList.add("selected");
+
+
+
+        respostaSelecionada =
+
+        Number(botao.dataset.value);
+
+
+
+        nextBtn.style.display="block";
+
+
+
+    });
+
+
+
+});
+
+
+
+
+// ===============================
+// PRÓXIMA PERGUNTA
+// ===============================
+
+
+nextBtn.addEventListener("click",()=>{
+
+
+    if(respostaSelecionada === null){
 
         return;
 
     }
 
-    answers.push(selectedAnswer);
 
-    currentQuestion++;
 
-    if (currentQuestion < questions.length) {
+    let pergunta = perguntas[perguntaAtual];
 
-        loadQuestion();
 
-    } else {
 
-        showResult();
+    /*
+    
+    O valor da resposta vai de 1 até 5.
+    
+    Quanto maior, maior a afinidade
+    com aquela área.
+
+    */
+
+
+    respostas[pergunta.area] += respostaSelecionada;
+
+
+
+
+    perguntaAtual++;
+
+
+
+
+
+    if(perguntaAtual < perguntas.length){
+
+
+
+        mostrarPergunta();
+
+
 
     }
 
-};
-// =========================
-// CALCULAR RESULTADO
-// =========================
+    else{
 
-function showResult() {
+
+
+        finalizarTeste();
+
+
+
+    }
+
+
+
+});
+
+
+
+
+// ===============================
+// FINALIZAR TESTE
+// ===============================
+
+
+function finalizarTeste(){
+
+
+    progressBar.style.width="100%";
+
+
 
     quiz.classList.remove("active");
+
+
     result.classList.add("active");
 
-    let scores = {
-        tecnologia: 0,
-        saude: 0,
-        educacao: 0,
-        artes: 0,
-        negocios: 0,
-        ambiente: 0,
-        engenharia: 0,
-        direito: 0
-    };
 
-    // Soma os pontos automaticamente
-    questions.forEach((pergunta, indice) => {
 
-        pergunta.areas.forEach(area => {
+    mostrarResultado();
 
-            scores[area] += answers[indice];
 
-        });
+}
+// =====================================
+// SCRIPT.JS - PARTE 3
+// RESULTADO DO TESTE
+// =====================================
 
-    });
 
-    const ranking = document.getElementById("ranking");
+// ===============================
+// MOSTRAR RESULTADO
+// ===============================
+
+
+function mostrarResultado(){
+
+
     const bestArea = document.getElementById("bestArea");
 
-    ranking.innerHTML = "<h2>📊 Compatibilidade com as áreas</h2>";
+    const ranking = document.getElementById("ranking");
 
-    // Cada área possui 2 perguntas.
-    // Máximo = 2 perguntas × 5 pontos = 10.
-    const maximo = 10;
+    const whyArea = document.getElementById("whyArea");
 
-    const resultado = Object.entries(scores)
-        .map(([area, valor]) => ({
-            area,
-            valor,
-            porcentagem: Math.round((valor / maximo) * 100)
-        }))
-        .sort((a, b) => b.porcentagem - a.porcentagem);
+    const coursesArea = document.getElementById("coursesArea");
 
-    resultado.forEach((item, index) => {
+    const jobsArea = document.getElementById("jobsArea");
 
-        let medalha = "";
+    const marketArea = document.getElementById("marketArea");
 
-        if (index === 0) medalha = "🥇";
-        else if (index === 1) medalha = "🥈";
-        else if (index === 2) medalha = "🥉";
 
-        ranking.innerHTML += `
 
-        <div class="area-score">
+    ranking.innerHTML="";
 
-            <strong>${medalha} ${areasInfo[item.area].nome}</strong>
-            - ${item.porcentagem}%
 
-            <div class="bar">
 
-                <div class="fill"
-                     style="width:${item.porcentagem}%">
-                </div>
+    // Organiza as áreas pela pontuação
 
-            </div>
+    let lista = Object.keys(respostas).map(area=>{
 
-        </div>
 
-        `;
+        return {
+
+            area:area,
+
+            pontos:respostas[area]
+
+        };
+
 
     });
 
-    const melhor = areasInfo[resultado[0].area];
+
+
+    lista.sort((a,b)=>{
+
+
+        return b.pontos - a.pontos;
+
+
+    });
+
+
+
+    const principal = lista[0];
+
+
+    const dados = areas[principal.area];
+
+
+
+    // Calcula porcentagem
+
+    const maiorPontuacao = 5 * 2;
+
+
+    const porcentagemPrincipal = Math.round(
+
+        (principal.pontos / maiorPontuacao) * 100
+
+    );
+
+
+
+
+
+    // ===============================
+    // ÁREA PRINCIPAL
+    // ===============================
+
 
     bestArea.innerHTML = `
 
-        <h2>${melhor.nome}</h2>
 
-        <p>${melhor.descricao}</p>
+        <h2>
 
-        <div class="info-box">
+        🏆 Sua maior afinidade:
 
-            <strong>💰 Faixa Salarial</strong><br>
+        </h2>
 
-            ${melhor.salario}
 
-        </div>
+        <h1>
 
-        <div class="info-box">
+        ${dados.profissao}
 
-            <strong>📈 Mercado de Trabalho</strong><br>
+        </h1>
 
-            ${melhor.mercado}
 
-        </div>
 
-        <div class="info-box">
+        <h3>
 
-            <strong>👨‍💼 Profissões</strong>
+        Área: ${dados.nome}
 
-            <ul>
+        </h3>
 
-                ${melhor.profissao.map(p => `<li>${p}</li>`).join("")}
 
-            </ul>
 
-        </div>
+        <p class="percent">
+
+        Compatibilidade: ${porcentagemPrincipal}%
+
+        </p>
+
 
     `;
 
-}
-// =========================
-// REFAZER TESTE
-// =========================
 
-restartBtn.onclick = function () {
 
-    // Zera as variáveis
-    currentQuestion = 0;
-    answers = [];
-    selectedAnswer = null;
 
-    // Limpa os resultados
-    document.getElementById("ranking").innerHTML = "";
-    document.getElementById("bestArea").innerHTML = "";
+    // ===============================
+    // EXPLICAÇÃO
+    // ===============================
 
-    // Zera a barra de progresso
-    progressBar.style.width = "0%";
 
-    // Remove seleção das respostas
-    options.forEach(btn => {
-        btn.classList.remove("selected");
+    whyArea.innerHTML = `
+
+
+    <h2>
+
+    💡 Por que essa profissão combina com você?
+
+    </h2>
+
+
+    <p>
+
+    ${dados.explicacao}
+
+    </p>
+
+
+    `;
+
+
+
+
+    // ===============================
+    // CURSOS
+    // ===============================
+
+
+    coursesArea.innerHTML = `
+
+
+    <h2>
+
+    🎓 Cursos recomendados
+
+    </h2>
+
+
+    <p>
+
+    ${dados.cursos}
+
+    </p>
+
+
+    `;
+
+
+
+
+    // ===============================
+    // PROFISSÕES
+    // ===============================
+
+
+    jobsArea.innerHTML = `
+
+
+    <h2>
+
+    💼 Profissões relacionadas
+
+    </h2>
+
+
+    <p>
+
+    ${dados.profissaoRelacionada}
+
+    </p>
+
+
+    `;
+
+
+
+
+    // ===============================
+    // MERCADO
+    // ===============================
+
+
+    marketArea.innerHTML = `
+
+
+    <h2>
+
+    📈 Mercado e salário
+
+    </h2>
+
+
+    <p>
+
+    💰 ${dados.salario}
+
+    </p>
+
+
+    <p>
+
+    ${dados.mercado}
+
+    </p>
+
+
+    `;
+
+
+
+
+    // ===============================
+    // RANKING COMPLETO
+    // ===============================
+
+
+
+    lista.forEach((item,index)=>{
+
+
+        let area = areas[item.area];
+
+
+
+        let porcentagem = Math.round(
+
+            (item.pontos / maiorPontuacao) * 100
+
+        );
+
+
+
+        let medalha="";
+
+
+        if(index===0){
+
+            medalha="🥇";
+
+        }
+
+        else if(index===1){
+
+            medalha="🥈";
+
+        }
+
+        else if(index===2){
+
+            medalha="🥉";
+
+        }
+
+
+
+
+        ranking.innerHTML += `
+
+
+        <div class="rank-item top${index+1}">
+
+
+            <div class="rank-title">
+
+
+                <span>
+
+                ${medalha}
+
+                ${area.nome}
+
+                </span>
+
+
+                <span>
+
+                ${porcentagem}%
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="rank-bar">
+
+
+                <div class="rank-fill"
+
+                style="width:${porcentagem}%">
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+        `;
+
+
+
     });
 
-    // Volta para a tela inicial
+
+}
+// =====================================
+// SCRIPT.JS - PARTE 4
+// AJUSTES FINAIS
+// =====================================
+
+
+
+// ===============================
+// BOTÃO REFAZER TESTE
+// ===============================
+
+
+restartBtn.addEventListener("click",()=>{
+
+
+    // Volta para a primeira tela
+
     result.classList.remove("active");
-    quiz.classList.remove("active");
+
     home.classList.add("active");
+
+
+
+    // Reinicia pergunta
+
+    perguntaAtual = 0;
+
+
+
+    // Limpa respostas
+
+    Object.keys(respostas).forEach(area=>{
+
+
+        respostas[area] = 0;
+
+
+    });
+
+
+
+    // Limpa resultado anterior
+
+    document.getElementById("bestArea").innerHTML="";
+
+    document.getElementById("ranking").innerHTML="";
+
+    document.getElementById("whyArea").innerHTML="";
+
+    document.getElementById("coursesArea").innerHTML="";
+
+    document.getElementById("jobsArea").innerHTML="";
+
+    document.getElementById("marketArea").innerHTML="";
+
+
+
+    // Volta barra de progresso
+
+    progressBar.style.width="0%";
+
+
+
+    // Remove respostas selecionadas
+
+    options.forEach(botao=>{
+
+
+        botao.classList.remove("selected");
+
+
+    });
+
+
+
+});
+
+
+
+
+// ===============================
+// ANIMAÇÃO DOS RESULTADOS
+// ===============================
+
+
+function animarResultado(){
+
+
+    const cards = document.querySelectorAll(
+
+        ".info-card, .rank-item"
+
+    );
+
+
+
+    cards.forEach((card,index)=>{
+
+
+        card.style.opacity="0";
+
+
+        card.style.transform="translateY(30px)";
+
+
+
+        setTimeout(()=>{
+
+
+            card.style.transition=".5s";
+
+
+            card.style.opacity="1";
+
+
+            card.style.transform="translateY(0)";
+
+
+
+        },index * 100);
+
+
+
+    });
+
+
+}
+
+
+
+// Executa animação quando abrir resultado
+
+const resultadoOriginal = mostrarResultado;
+
+
+mostrarResultado = function(){
+
+
+    resultadoOriginal();
+
+
+    setTimeout(()=>{
+
+
+        animarResultado();
+
+
+    },100);
+
+
 
 };
 
-// =========================
-// CARREGAR PRIMEIRA PERGUNTA
-// =========================
 
-loadQuestion();
+
+
+
+// ===============================
+// PROTEÇÃO CONTRA ERROS
+// ===============================
+
+
+window.addEventListener("load",()=>{
+
+
+    if(!home.classList.contains("active")
+
+    && !quiz.classList.contains("active")
+
+    && !result.classList.contains("active")){
+
+
+        home.classList.add("active");
+
+
+    }
+
+
+});
