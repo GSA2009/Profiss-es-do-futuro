@@ -79,3 +79,4 @@ const questions = [
     areas: ["direito"]
   }
 ];
+console.log("JavaScript carregado!");
