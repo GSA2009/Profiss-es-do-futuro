@@ -1,169 +1,77 @@
-const questions = [
-{
-texto:"Você gosta de mexer em computadores, celulares ou tecnologia?",
-areas:["tecnologia","engenharia"]
-},
-{
-texto:"Você gosta de criar aplicativos ou jogos?",
-areas:["tecnologia"]
-},
-{
-texto:"Você gosta de descobrir como os computadores funcionam?",
-areas:["tecnologia"]
-},
-{
-texto:"Você gostaria de trabalhar com robôs ou inteligência artificial?",
-areas:["tecnologia","engenharia"]
-},
-{
-texto:"Você gosta de resolver problemas usando lógica?",
-areas:["tecnologia","engenharia"]
-},
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Vocacional</title>
 
-{
-texto:"Você gosta de cuidar das pessoas?",
-areas:["saude"]
-},
-{
-texto:"Você gostaria de trabalhar em hospitais ou clínicas?",
-areas:["saude"]
-},
-{
-texto:"Você gosta de aprender sobre o corpo humano?",
-areas:["saude"]
-},
-{
-texto:"Você se preocupa com a saúde das pessoas?",
-areas:["saude"]
-},
-{
-texto:"Você gostaria de salvar vidas?",
-areas:["saude"]
-},
+    <link rel="stylesheet" href="style.css">
 
-{
-texto:"Você gosta de ensinar outras pessoas?",
-areas:["educacao"]
-},
-{
-texto:"Você gosta de explicar matérias para seus colegas?",
-areas:["educacao"]
-},
-{
-texto:"Você gostaria de ser professor(a)?",
-areas:["educacao"]
-},
-{
-texto:"Você gosta de ajudar crianças a aprender?",
-areas:["educacao"]
-},
-{
-texto:"Você gosta de estudar diferentes assuntos?",
-areas:["educacao"]
-},
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-{
-texto:"Você gosta de desenhar?",
-areas:["artes"]
-},
-{
-texto:"Você gosta de pintar ou fazer ilustrações?",
-areas:["artes"]
-},
-{
-texto:"Você gosta de criar vídeos ou animações?",
-areas:["artes","tecnologia"]
-},
-{
-texto:"Você gosta de fotografia?",
-areas:["artes"]
-},
-{
-texto:"Você gosta de inventar coisas criativas?",
-areas:["artes"]
-},
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-{
-texto:"Você gosta de liderar equipes?",
-areas:["negocios"]
-},
-{
-texto:"Você gostaria de abrir sua própria empresa?",
-areas:["negocios"]
-},
-{
-texto:"Você gosta de vender produtos?",
-areas:["negocios"]
-},
-{
-texto:"Você gosta de organizar eventos ou projetos?",
-areas:["negocios"]
-},
-{
-texto:"Você gosta de tomar decisões importantes?",
-areas:["negocios"]
-},
+<body>
 
-{
-texto:"Você gosta da natureza?",
-areas:["ambiente"]
-},
-{
-texto:"Você gostaria de proteger os animais?",
-areas:["ambiente"]
-},
-{
-texto:"Você gosta de cuidar das plantas?",
-areas:["ambiente"]
-},
-{
-texto:"Você se preocupa com o meio ambiente?",
-areas:["ambiente"]
-},
-{
-texto:"Você gostaria de trabalhar preservando florestas?",
-areas:["ambiente"]
-},
+<div class="container">
 
-{
-texto:"Você gosta de construir coisas?",
-areas:["engenharia"]
-},
-{
-texto:"Você gosta de matemática?",
-areas:["engenharia"]
-},
-{
-texto:"Você gostaria de criar pontes ou prédios?",
-areas:["engenharia"]
-},
-{
-texto:"Você gosta de entender como máquinas funcionam?",
-areas:["engenharia"]
-},
-{
-texto:"Você gosta de montar ou desmontar objetos?",
-areas:["engenharia"]
-},
+    <div id="inicio">
 
-{
-texto:"Você gosta de defender o que é certo?",
-areas:["direito"]
-},
-{
-texto:"Você gosta de conversar para resolver conflitos?",
-areas:["direito"]
-},
-{
-texto:"Você gostaria de conhecer as leis?",
-areas:["direito"]
-},
-{
-texto:"Você gostaria de trabalhar ajudando pessoas na justiça?",
-areas:["direito"]
-},
-{
-texto:"Você gosta de argumentar e convencer pessoas usando boas ideias?",
-areas:["direito"]
-}
-];
+        <h1>🎓 Teste Vocacional</h1>
+
+        <p class="subtitulo">
+            Descubra quais áreas profissionais combinam mais com você.
+        </p>
+
+        <button id="btnComecar">
+            Iniciar Teste
+        </button>
+
+    </div>
+
+    <div id="quiz" class="oculto">
+
+        <div class="topo">
+
+            <div class="progresso">
+
+                <div id="barra"></div>
+
+            </div>
+
+            <p id="contador">
+                Pergunta 1 de 15
+            </p>
+
+        </div>
+
+        <h2 id="pergunta"></h2>
+
+        <div id="opcoes"></div>
+
+    </div>
+
+    <div id="resultado" class="oculto">
+
+        <h1>Seu Resultado</h1>
+
+        <p class="textoResultado">
+            As áreas abaixo foram as que mais combinaram com seu perfil.
+        </p>
+
+        <div id="ranking"></div>
+
+        <button id="refazer">
+            Refazer Teste
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
