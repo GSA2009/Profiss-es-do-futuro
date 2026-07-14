@@ -2,168 +2,140 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
-
 body{
-    background:linear-gradient(135deg,#4facfe,#00c6fb);
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
     min-height:100vh;
-    display:flex;
+}
+.screen{
+    display:none;
+    min-height:100vh;
     justify-content:center;
     align-items:center;
-    padding:30px;
-}
-
-.container{
-    width:100%;
-    max-width:850px;
-    background:white;
-    border-radius:20px;
     padding:40px;
-    box-shadow:0 15px 35px rgba(0,0,0,.2);
 }
-
-.oculto{
-    display:none;
+.screen.active{
+    display:flex;
 }
-
-h1{
+.hero{
+    width:100%;
+    max-width:1000px;
     text-align:center;
-    color:#1f3b6f;
-    margin-bottom:15px;
 }
-
-.subtitulo{
-    text-align:center;
-    font-size:18px;
-    color:#555;
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+.hero p{
+    font-size:1.2rem;
+    color:#dbeafe;
     margin-bottom:35px;
 }
-
-button{
-    width:100%;
-    padding:15px;
+.areas-preview{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:40px;
+}
+.areas-preview div{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    padding:18px;
+    border-radius:15px;
+    transition:.3s;
+    font-weight:bold;
+}
+.areas-preview div:hover{
+    transform:translateY(-6px);
+    background:#2563eb;
+}
+#startBtn{
+    background:#2563eb;
+    color:white;
     border:none;
-    border-radius:12px;
+    padding:18px 40px;
+    border-radius:15px;
     cursor:pointer;
     font-size:18px;
-    font-weight:600;
+    font-weight:bold;
     transition:.3s;
 }
-
-#btnComecar,
-#refazer{
-    background:#2f80ed;
-    color:white;
+#startBtn:hover{
+    transform:scale(1.05);
+    background:#1d4ed8;
 }
-
-#btnComecar:hover,
-#refazer:hover{
-    background:#1769d4;
+.qr-area{
+    margin-top:50px;
 }
-
-.topo{
+.qr-area h3{
+    margin-bottom:15px;
+}
+.qr-area img{
+    width:180px;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+.qr-area p{
+    margin-top:10px;
+    color:#dbeafe;
+}
+.quiz-container{
+    width:100%;
+    max-width:850px;
+}
+.top-info{
     margin-bottom:25px;
 }
-
-.progresso{
+#questionCounter{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+.progress-container{
     width:100%;
-    height:16px;
-    background:#ddd;
+    height:14px;
+    background:rgba(255,255,255,.15);
     border-radius:30px;
     overflow:hidden;
 }
-
-#barra{
-    width:0%;
+#progressBar{
+    width:0;
     height:100%;
-    background:linear-gradient(90deg,#00c853,#64dd17);
+    background:#60a5fa;
     transition:.4s;
 }
-
-#contador{
-    text-align:right;
-    margin-top:10px;
-    color:#555;
-    font-weight:600;
+.question-card{
+    background:white;
+    color:#111827;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
-
-#pergunta{
-    margin-bottom:25px;
-    color:#222;
+.question-card h2{
     text-align:center;
+    margin-bottom:30px;
 }
-
-#opcoes{
+.options{
     display:flex;
     flex-direction:column;
     gap:15px;
 }
-
-.opcao{
-    background:#f5f5f5;
-    border:2px solid transparent;
-    padding:15px;
+.option{
+    padding:16px;
+    border:none;
     border-radius:12px;
+    background:#e5e7eb;
     cursor:pointer;
     transition:.3s;
+    font-size:16px;
 }
-
-.opcao:hover{
-    background:#eaf4ff;
-    border-color:#2f80ed;
+.option:hover{
+    background:#d1d5db;
 }
-
-.cardResultado{
-    margin-top:20px;
-    padding:20px;
-    border-radius:15px;
-    background:#f8f8f8;
-    border-left:8px solid #2f80ed;
-}
-
-.cardResultado h2{
-    margin-bottom:10px;
-    color:#1f3b6f;
-}
-
-.cardResultado p{
-    margin:8px 0;
-    line-height:1.6;
-}
-
-.porcentagem{
-    font-size:20px;
-    color:#00a651;
-    font-weight:bold;
-}
-
-.medalha{
-    font-size:28px;
-}
-
-.textoResultado{
-    text-align:center;
-    margin-bottom:30px;
-    color:#555;
-}
-
-@media(max-width:700px){
-
-.container{
-padding:20px;
-}
-
-h1{
-font-size:28px;
-}
-
-#pergunta{
-font-size:22px;
-}
-
-button{
-font-size:16px;
-}
-
+.option.selected{
+    background:#2563eb;
+    color:white;
 }
