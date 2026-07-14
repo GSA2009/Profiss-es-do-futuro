@@ -146,29 +146,36 @@ h1{
    ÁREAS
 ========================= */
 
-.area-card{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:150px;
-
-}
-
-
 .icone{
 
     font-size:45px;
+
+    display:block;
 
     margin-bottom:10px;
 
 }
 
+
+.area-card span{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-weight:600;
+
+}
+
+.areas-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
 
 .area-card:hover{
 
