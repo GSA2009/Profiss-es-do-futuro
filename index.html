@@ -1,102 +1,169 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profissões do Futuro</title>
+const questions = [
+{
+texto:"Você gosta de mexer em computadores, celulares ou tecnologia?",
+areas:["tecnologia","engenharia"]
+},
+{
+texto:"Você gosta de criar aplicativos ou jogos?",
+areas:["tecnologia"]
+},
+{
+texto:"Você gosta de descobrir como os computadores funcionam?",
+areas:["tecnologia"]
+},
+{
+texto:"Você gostaria de trabalhar com robôs ou inteligência artificial?",
+areas:["tecnologia","engenharia"]
+},
+{
+texto:"Você gosta de resolver problemas usando lógica?",
+areas:["tecnologia","engenharia"]
+},
 
-  <link rel="stylesheet" href="style.css">
-</head>
+{
+texto:"Você gosta de cuidar das pessoas?",
+areas:["saude"]
+},
+{
+texto:"Você gostaria de trabalhar em hospitais ou clínicas?",
+areas:["saude"]
+},
+{
+texto:"Você gosta de aprender sobre o corpo humano?",
+areas:["saude"]
+},
+{
+texto:"Você se preocupa com a saúde das pessoas?",
+areas:["saude"]
+},
+{
+texto:"Você gostaria de salvar vidas?",
+areas:["saude"]
+},
 
-<body>
+{
+texto:"Você gosta de ensinar outras pessoas?",
+areas:["educacao"]
+},
+{
+texto:"Você gosta de explicar matérias para seus colegas?",
+areas:["educacao"]
+},
+{
+texto:"Você gostaria de ser professor(a)?",
+areas:["educacao"]
+},
+{
+texto:"Você gosta de ajudar crianças a aprender?",
+areas:["educacao"]
+},
+{
+texto:"Você gosta de estudar diferentes assuntos?",
+areas:["educacao"]
+},
 
-<section id="home" class="screen active">
-  <div class="hero">
-    <h1>🚀 Descubra sua Área Profissional</h1>
+{
+texto:"Você gosta de desenhar?",
+areas:["artes"]
+},
+{
+texto:"Você gosta de pintar ou fazer ilustrações?",
+areas:["artes"]
+},
+{
+texto:"Você gosta de criar vídeos ou animações?",
+areas:["artes","tecnologia"]
+},
+{
+texto:"Você gosta de fotografia?",
+areas:["artes"]
+},
+{
+texto:"Você gosta de inventar coisas criativas?",
+areas:["artes"]
+},
 
-    <p>
-      Responda 15 perguntas e descubra quais áreas profissionais combinam mais com seu perfil.
-    </p>
+{
+texto:"Você gosta de liderar equipes?",
+areas:["negocios"]
+},
+{
+texto:"Você gostaria de abrir sua própria empresa?",
+areas:["negocios"]
+},
+{
+texto:"Você gosta de vender produtos?",
+areas:["negocios"]
+},
+{
+texto:"Você gosta de organizar eventos ou projetos?",
+areas:["negocios"]
+},
+{
+texto:"Você gosta de tomar decisões importantes?",
+areas:["negocios"]
+},
 
-    <div class="areas-preview">
-      <div>💻 Tecnologia</div>
-      <div>🏥 Saúde</div>
-      <div>📚 Educação</div>
-      <div>🎨 Artes</div>
-      <div>💼 Negócios</div>
-      <div>🌱 Meio Ambiente</div>
-      <div>⚙️ Engenharia</div>
-      <div>⚖️ Direito</div>
-    </div>
+{
+texto:"Você gosta da natureza?",
+areas:["ambiente"]
+},
+{
+texto:"Você gostaria de proteger os animais?",
+areas:["ambiente"]
+},
+{
+texto:"Você gosta de cuidar das plantas?",
+areas:["ambiente"]
+},
+{
+texto:"Você se preocupa com o meio ambiente?",
+areas:["ambiente"]
+},
+{
+texto:"Você gostaria de trabalhar preservando florestas?",
+areas:["ambiente"]
+},
 
-    <button id="startBtn">COMEÇAR TESTE</button>
+{
+texto:"Você gosta de construir coisas?",
+areas:["engenharia"]
+},
+{
+texto:"Você gosta de matemática?",
+areas:["engenharia"]
+},
+{
+texto:"Você gostaria de criar pontes ou prédios?",
+areas:["engenharia"]
+},
+{
+texto:"Você gosta de entender como máquinas funcionam?",
+areas:["engenharia"]
+},
+{
+texto:"Você gosta de montar ou desmontar objetos?",
+areas:["engenharia"]
+},
 
-    <div class="qr-area">
-      <h3>📱 Faça o teste pelo seu celular</h3>
-
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://gsa2009.github.io/Profiss-es-do-futuro/"
-        alt="QR Code">
-
-      <p>Aponte a câmera para o QR Code.</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="quiz" class="screen">
-
-  <div class="quiz-container">
-
-    <div class="top-info">
-
-      <div id="questionCounter">Pergunta 1 de 15</div>
-
-      <div class="progress-container">
-        <div id="progressBar"></div>
-      </div>
-
-    </div>
-
-    <div class="question-card">
-
-      <h2 id="questionText">Pergunta</h2>
-
-      <div id="options" class="options">
-
-        <button class="option" data-value="1">Discordo totalmente</button>
-        <button class="option" data-value="2">Discordo</button>
-        <button class="option" data-value="3">Neutro</button>
-        <button class="option" data-value="4">Concordo</button>
-        <button class="option" data-value="5">Concordo totalmente</button>
-
-      </div>
-
-      <button id="nextBtn">Próxima →</button>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="result" class="screen">
-
-  <div class="result-container">
-
-    <h1>🏆 Seu Resultado</h1>
-
-    <div id="ranking"></div>
-
-    <div id="bestArea"></div>
-
-    <button id="restartBtn">Refazer Teste</button>
-
-  </div>
-
-</section>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+{
+texto:"Você gosta de defender o que é certo?",
+areas:["direito"]
+},
+{
+texto:"Você gosta de conversar para resolver conflitos?",
+areas:["direito"]
+},
+{
+texto:"Você gostaria de conhecer as leis?",
+areas:["direito"]
+},
+{
+texto:"Você gostaria de trabalhar ajudando pessoas na justiça?",
+areas:["direito"]
+},
+{
+texto:"Você gosta de argumentar e convencer pessoas usando boas ideias?",
+areas:["direito"]
+}
+];
