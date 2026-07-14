@@ -1,94 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descubra sua Profissão</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profissões do Futuro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
+
+<!-- ===================== TELA INICIAL ===================== -->
+
 <section id="home" class="screen active">
-  <div class="hero">
-    <h1>🚀 Descubra sua Profissão</h1>
-    <p>
-      Responda às perguntas e descubra quais profissões combinam
-      mais com a sua personalidade.
-    </p>
-    <div class="areas-preview">
-      <div>💻 Tecnologia</div>
-      <div>🏥 Saúde</div>
-      <div>📚 Educação</div>
-      <div>🎨 Artes</div>
-      <div>💼 Negócios</div>
-      <div>🌱 Meio Ambiente</div>
-      <div>⚙️ Engenharia</div>
-      <div>⚖️ Direito</div>
+
+    <div class="hero-card">
+
+        <h1>🚀 Profissões do Futuro</h1>
+
+        <p class="subtitle">
+
+            Descubra quais profissões combinam mais com você respondendo um pequeno teste.
+
+        </p>
+
+        <div class="areas-grid">
+
+            <div class="area-card">💻<span>Tecnologia</span></div>
+
+            <div class="area-card">🏥<span>Saúde</span></div>
+
+            <div class="area-card">📚<span>Educação</span></div>
+
+            <div class="area-card">🎨<span>Artes</span></div>
+
+            <div class="area-card">💼<span>Negócios</span></div>
+
+            <div class="area-card">🌱<span>Meio Ambiente</span></div>
+
+            <div class="area-card">⚙️<span>Engenharia</span></div>
+
+            <div class="area-card">⚖️<span>Direito</span></div>
+
+        </div>
+
+        <button id="startBtn">
+
+            COMEÇAR TESTE
+
+        </button>
+
+        <div class="qr-card">
+
+            <h3>📱 Fazer pelo celular</h3>
+
+            <img
+
+                src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=SEU_LINK_DO_GITHUB"
+
+                alt="QR Code">
+
+            <p>
+
+                Escaneie o QR Code para abrir o teste no celular.
+
+            </p>
+
+        </div>
+
     </div>
-    <button id="startBtn">
-      COMEÇAR TESTE
-    </button>
-    <div class="qr-area">
-      <h3>📱 Faça o teste pelo celular</h3>
-      <img
-      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=SEU_LINK_DO_GITHUB"
-      alt="QR Code">
-      <p>
-        Escaneie o QR Code para responder ao teste.
-      </p>
-    </div>
-  </div>
+
 </section>
+
+<!-- ===================== QUIZ ===================== -->
+
 <section id="quiz" class="screen">
-<div class="quiz-container">
-<div class="top-info">
-<div id="questionCounter">
-Pergunta 1 de 16
-</div>
-<div class="progress-container">
-<div id="progressBar"></div>
-</div>
-</div>
-<div class="question-card">
-<h2 id="questionText">
-Pergunta
-</h2>
-<div id="options" class="options">
-<button class="option" data-value="1">
-😕 Nada a ver comigo
-</button>
-<button class="option" data-value="2">
-🙁 Um pouco
-</button>
-<button class="option" data-value="3">
-😐 Mais ou menos
-</button>
-<button class="option" data-value="4">
-🙂 Combina comigo
-</button>
-<button class="option" data-value="5">
-😄 Tem tudo a ver comigo
-</button>
-</div>
-<button id="nextBtn" class="next-btn">
-Próxima →
-</button>
-</div>
-</div>
+
+    <div class="quiz-card">
+
+        <div class="quiz-header">
+
+            <div id="questionCounter">
+
+                Pergunta 1 de 16
+
+            </div>
+
+            <div class="progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+        </div>
+
+        <div class="question-box">
+
+            <h2 id="questionText">
+
+                Pergunta
+
+            </h2>
+
+            <div class="options">
+
+                <button class="option" data-value="1">
+
+                    😕 Nada a ver comigo
+
+                </button>
+
+                <button class="option" data-value="2">
+
+                    🙁 Um pouco
+
+                </button>
+
+                <button class="option" data-value="3">
+
+                    😐 Mais ou menos
+
+                </button>
+
+                <button class="option" data-value="4">
+
+                    🙂 Combina comigo
+
+                </button>
+
+                <button class="option" data-value="5">
+
+                    😄 Tem tudo a ver comigo
+
+                </button>
+
+            </div>
+
+            <button id="nextBtn" class="next-btn">
+
+                Próxima ➜
+
+            </button>
+
+        </div>
+
+    </div>
+
 </section>
+
+<!-- ===================== RESULTADO ===================== -->
+
 <section id="result" class="screen">
-<div class="result-container">
-<h1>
-🏆 Seu Resultado
-</h1>
-<div id="ranking" class="ranking">
-</div>
-<div id="bestArea" class="best-area">
-</div>
-<button id="restartBtn">
-🔄 Refazer Teste
-</button>
-</div>
+
+    <div class="result-card">
+
+        <h1>
+
+            🏆 Seu Perfil Profissional
+
+        </h1>
+
+        <p class="result-subtitle">
+
+            Estas são as áreas que mais combinam com você.
+
+        </p>
+
+        <!-- Área Principal -->
+
+        <div id="bestArea" class="best-area"></div>
+
+        <!-- Ranking -->
+
+        <div id="ranking" class="ranking"></div>
+
+        <!-- Explicação -->
+
+        <div id="whyArea" class="info-card"></div>
+
+        <!-- Cursos -->
+
+        <div id="coursesArea" class="info-card"></div>
+
+        <!-- Profissões -->
+
+        <div id="jobsArea" class="info-card"></div>
+
+        <!-- Mercado -->
+
+        <div id="marketArea" class="info-card"></div>
+
+        <button id="restartBtn">
+
+            🔄 Refazer Teste
+
+        </button>
+
+    </div>
+
 </section>
+
 <script src="script.js"></script>
+
 </body>
+
 </html>
